@@ -1,6 +1,6 @@
 #project UAS Algoritma Pemograman
 import os
-import CRUD as CRUD
+
 
 pake_1=(f"Paket 1 : (Mobil Avanza, Tahun 2015) Rp.500.000/hari")
 pake_2=(f"Paket 2 : (Mobil Innova, Tahun 2019) Rp.700.000/hari")
