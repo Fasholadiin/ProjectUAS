@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
 
         paket = input("TENTUKAN PILIHAN ANDA...  ")       
-        print("\n====================================\n")
+        print("\n====================================================\n")
 
         match paket:
             case "1": print(pake_1)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
             case "3": print(pake_3)
             case "4": print(pake_4)
 
-        print("\n====================================\n")
+        print("\n====================================================\n")
         is_done = input("APAKAH SUDAH MANTAB!? : (y/n)? ")
         if is_done == "y" or is_done == "Y":
             break
