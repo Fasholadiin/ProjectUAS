@@ -26,19 +26,21 @@ if __name__ == "__main__":
 
 
 
-        paket = input("TENTUKAN PILIHAN ANDA...  ")       
-        print("\n====================================================\n")
+        paket = input("TENTUKAN PILIHAN ANDA...  ") 
+        if paket =="1"or paket =="2" or paket =="3" or paket =="4":
+            break      
+print("\n====================================================\n")
+match paket:
+    case "1": print(pake_1)
+    case "2": print(pake_2)
+    case "3": print(pake_3)
+    case "4": print(pake_4)
 
-        match paket:
-            case "1": print(pake_1)
-            case "2": print(pake_2)
-            case "3": print(pake_3)
-            case "4": print(pake_4)
+print("\n====================================================n")
+hari=int(input("Berapa hari anda akan menyewa?  : "))
+is_done = input("LANJUT MENUJUT MENUJU INVOICE ANDA... (tekan enter) ")
 
-        print("\n====================================================\n")
-        is_done = input("APAKAH SUDAH MANTAB!? : (y/n)? ")
-        if is_done == "y" or is_done == "Y":
-            break
+
 
 if(paket=='1'): 
     tpaket=(f"Avanza",2015,500000)
@@ -51,9 +53,6 @@ elif(paket=='4'):
 else :
     tpaket=(f"")
 
-
-
-hari=int(input("Berapa hari anda akan menyewa?  : "))
 totalpay=(tpaket[2])*hari
 match sistem_operasi:
     case "nt": os.system("cls")
