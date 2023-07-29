@@ -58,7 +58,7 @@ match paket:
 
 print("\n====================================================n")
 hari=int(input("Berapa hari anda akan menyewa?  : "))
-is_done = input("LANJUT MENUJUT MENUJU INVOICE ANDA... (tekan enter) ")
+is_done = input("Tanggal anda akan mengambil mobilnya?(DD/MM)  :")
 
 
 
@@ -77,28 +77,32 @@ if dom=="batang" or "Batang" or "BATANG" or "btg" or "BTG":
     dicount=(int(100000))
 pay=(tpaket[2])*hari-dicount
 
-
-
+rphm=f"RP. {(tpaket[2]):,}.00"
+rpds=f"RP. {dicount:,}.00"
+rppay=f"RP. {pay:,}.00"
 
 match sistem_operasi:
     case "nt": os.system("cls")
 
-print("\n---------------------------")
+print("\n------------------------------------")
 print("SIPCAR RENTAL MOBIL TERBAIK")
 print("        INVOICE ANDA")
-print("---------------------------\n")
+print("------------------------------------\n")
 print("")
 print("Nama Penyewa         :",nama)
 print("Domsili Penyewa      :",dom)
 print("Merek Mobil          : %s"%(tpaket[0]))
 print("Tahun Produksi Mobil : %d"%(tpaket[1]))
-print("Harga Sewa perHari   : %d"%(tpaket[2]))
+print("Harga Sewa perHari   :",rphm)
+print("Tanggal Membawa Mobil:",is_done)
 print("Jumlah hari sewa     :",hari)
-print("Discount             :",dicount)
-print("Total Harga          :",pay)
+print("Discount             :",rpds)
+print("Total Harga          :",rppay)
 print("")
-print("\n---------------------------")
-next_=input("SILAHKAN LAKUKAN PEMBAYARAN\nTEKAN ENTER UNTUK KE MENU PEMBAYARAN...")
+print("\n------------------------------------")
+print("SIMPAN INVOICE ANDA LALU\nKIRIM MELALUI WHATSAPP KAMI")
+print("------------------------------------\n")
+next_=input("TEKAN ENTER UNTUK KE MENU PEMBAYARAN...")
 match sistem_operasi:
     case "nt": os.system("cls")
 
