@@ -25,7 +25,8 @@ while(True):
 pake_1=(f"Paket 1 : (Mobil Avanza, Tahun 2015) Rp.500.000/hari")
 pake_2=(f"Paket 2 : (Mobil Innova, Tahun 2019) Rp.700.000/hari")
 pake_3=(f"Paket 3 : (Mobil Pajero, Tahun 2020) Rp.1.000.000/hari")
-pake_4=(f"Paket 4 : (Mobil Alphard, Tahun 2021) Rp.1.100.000/hari\n")
+pake_4=(f"Paket 4 : (Mobil Alphard, Tahun 2021) Rp.1.100.000/hari")
+pake_5=(f"Paket 5 : (Mobil Xpander, Tahun 2023) Rp.850.000/hari\n")
 
 if __name__ == "__main__":
     sistem_operasi = os.name
@@ -43,11 +44,12 @@ if __name__ == "__main__":
         print(pake_2)
         print(pake_3)
         print(pake_4)
+        print(pake_5)
 
 
 
         paket = input("TENTUKAN PILIHAN ANDA... :") 
-        if paket =="1"or paket =="2" or paket =="3" or paket =="4":
+        if paket =="1"or paket =="2" or paket =="3" or paket =="4" or paket =="5": 
             break      
 print("\n====================================================\n")
 match paket:
@@ -55,6 +57,7 @@ match paket:
     case "2": print(pake_2)
     case "3": print(pake_3)
     case "4": print(pake_4)
+    case "5": print(pake_5)
 
 print("\n====================================================n")
 hari=int(input("Berapa hari anda akan menyewa?  : "))
@@ -70,16 +73,28 @@ elif(paket=='3'):
     tpaket=(f"Pajero",2020,1000000)
 elif(paket=='4'):
     tpaket=(f"Alphard",2021,1100000)
+elif(paket=='5'):
+    tpaket=(f"Xpander",2023,850000)
 else :
     tpaket=(f"")
 
-if dom=="batang" or "Batang" or "BATANG" or "btg" or "BTG":
+if dom=="BATANG" or dom=="batang" or dom=="Batang" or dom=="btg" or dom=="BTG":
     dicount=(int(100000))
-pay=(tpaket[2])*hari-dicount
+else :
+    dicount=(int(0))
 
+pay=(tpaket[2])*hari
+if hari>=5:
+    dch=(int(pay*0.1))
+else :
+    dch=(int(0))
+tth=pay-dch-dicount
+
+
+rpz=f"RP. {dch:,},00"
 rphm=f"RP. {(tpaket[2]):,}.00"
 rpds=f"RP. {dicount:,}.00"
-rppay=f"RP. {pay:,}.00"
+rppay=f"RP. {tth:,}.00"
 
 match sistem_operasi:
     case "nt": os.system("cls")
@@ -97,6 +112,7 @@ print("Harga Sewa perHari   :",rphm)
 print("Tanggal Membawa Mobil:",is_done)
 print("Jumlah hari sewa     :",hari)
 print("Discount             :",rpds)
+print("Discount Hari>5      :",rpz)
 print("Total Harga          :",rppay)
 print("")
 print("\n------------------------------------")
@@ -111,4 +127,3 @@ with open("database.txt", 'r', ) as file:
 
 print(pmbyr)
 kl=input("TERIMAKASIH SUDAH MELAKUKAN BOOKING ^_^")
-
